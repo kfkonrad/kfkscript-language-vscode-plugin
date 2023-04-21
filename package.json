@@ -1,0 +1,25 @@
+{
+  "name": "kfkscript-language",
+  "displayName": "kfkscript",
+  "description": "Syntax highlighting for the kfkscript language",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.77.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "kfkscript",
+      "aliases": ["kfkscript", "kfkscript"],
+      "extensions": [".kfkscript"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "kfkscript",
+      "scopeName": "source.kfkscript",
+      "path": "./syntaxes/kfkscript.tmLanguage.json"
+    }]
+  }
+}

@@ -1,0 +1,96 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "kfkscript",
+	"patterns": [
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#quotestring"
+		},
+		{
+			"include": "#dollarstring"
+		},
+		{
+			"include": "#comment"
+		},
+		{
+			"include": "#variadic"
+		},
+		{
+			"include": "#number"
+		},
+		{
+			"include": "#constant"
+		},
+		{
+			"include": "#double-colon-module"
+		},
+		{
+			"include": "#important-keyword"
+		},
+		{
+			"include": "#normal-keyword"
+		}
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [{
+				"name": "keyword.control.kfkscript",
+				"match": "\\b(if|else|end|subroutine|keyword|return)\\b"
+			}]
+		},
+		"quotestring": {
+			"name": "string.quoted.double.kfkscript",
+			"begin": "'",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.kfkscript",
+					"match": "\\\\."
+				}
+			]
+		},
+		"dollarstring": {
+			"name": "string.unquoted.kfkscript.dollarstring",
+			"begin": "\\$",
+			"end": " |\n",
+			"patterns": [
+				{
+					"name": "constant.character.escape.kfkscript2",
+					"match": "\\\\."
+				}
+			]
+		},
+		"comment": {
+			"name": "comment.line.number-sign.kfkscript",
+			"begin": "#",
+			"end": "\n"
+		},
+		"number":{
+			"name": "constant.numeric",
+			"match": "[!\\.\\d-]?-?((\\d+(\\.\\d*)?)|(\\.\\d+))\\b"
+		},
+		"constant":{
+			"name": "constant.language.kfkscript",
+			"match": "\\b( |^)(true|false)\\b"
+		},
+		"double-colon-module":{
+			"name": "entity.name.class",
+			"match": "\\b[^ ]+::\\b"
+		},
+		"important-keyword":{
+			"name": "variable.other.kfkscript",
+			"match": "\\b(let|tel|run)\\b"
+		},
+		"variadic":{
+			"name": "keyword.control.kfkscript",
+			"match": "\\.\\.\\.\\d+\\b"
+		},
+		"normal-keyword":{
+			"name": "entity.name.function.kfkscript",
+			"match": "\\b[^ ]+\\b"
+		}
+	},
+	"scopeName": "source.kfkscript"
+}
